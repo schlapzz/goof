@@ -5,7 +5,8 @@ RUN mkdir /tmp/extracted_files
 COPY . /usr/src/goof
 WORKDIR /usr/src/goof
 
-RUN npm update --no-audit
+RUN npm set audit false
+RUN npm update
 RUN npm install --no-audit
 EXPOSE 3001
 EXPOSE 9229
